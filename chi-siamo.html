@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Siamo - La Vela Ristorante | Storia e Tradizione dal 1960 a Torre a Mare, Bari</title>
+    <meta name="description" content="Scopri la storia della famiglia Ficarella e del ristorante La Vela. Dal 1960 una tradizione di eccellenza nella cucina pugliese e nelle specialità di pesce a Torre a Mare, Bari.">
+    <meta property="og:title" content="Chi Siamo - La Vela Ristorante | Storia e Tradizione dal 1960">
+    <meta property="og:description" content="Scopri la storia della famiglia Ficarella e del ristorante La Vela. Dal 1960 una tradizione di eccellenza nella cucina pugliese.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Chi Siamo - La Vela Ristorante | Storia e Tradizione dal 1960">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "La Vela Ristorante",
+        "servesCuisine": ["Italian", "Pizza", "Seafood", "Pugliese"],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Torre a Mare",
+            "addressLocality": "Bari",
+            "addressRegion": "Puglia",
+            "addressCountry": "IT"
+        },
+        "telephone": "+39 080 5430873",
+        "email": "info@lavelabari.it",
+        "foundingDate": "1960",
+        "sameAs": [
+            "https://www.facebook.com/lavelabari/",
+            "https://www.instagram.com/ristorantelavelabari/"
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            /* Palette */
+            --colore-primario: #1e3a5f;
+            --colore-secondario: #2c5282;
+            --colore-accento: #38b2ac;
+            --colore-sfondo: #fafbfc;
+            --colore-sfondo-secondario: #f1f5f9;
+            --colore-testo: #2d3748;
+            --colore-testo-chiaro: #718096;
+            --colore-bordi: #e2e8f0;
+
+            /* Tipografia */
+            --font-titoli: 'Playfair Display', serif;
+            --font-testo: 'Inter', sans-serif;
+
+            /* Layout */
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 16px rgba(30, 58, 95, 0.08);
+            --box-shadow-hover: 0 12px 32px rgba(30, 58, 95, 0.15);
+            --transizione: all 0.3s ease;
+
+            /* Spaziatura */
+            --spazio-xs: 0.5rem;
+            --spazio-sm: 1rem;
+            --spazio-md: 2rem;
+            --spazio-lg: 4rem;
+            --spazio-xl: 8rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-testo);
+            line-height: 1.7;
+            color: var(--colore-testo);
+            background-color: var(--colore-sfondo);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spazio-md);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spazio-sm) var(--spazio-md);
+        }
+
+        .logo {
+            font-family: var(--font-titoli);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--colore-primario);
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: var(--spazio-md);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spazio-md);
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--colore-testo);
+            font-weight: 600;
+            transition: var(--transizione);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--colore-accento);
+        }
+
+        .cta-button {
+            background: var(--colore-accento);
+            color: white;
+            padding: var(--spazio-xs) var(--spazio-sm);
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transizione);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--colore-primario);
+            transition: var(--transizione);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: var(--spazio-lg) 0;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: var(--spazio-xl) 0;
+            background: linear-gradient(135deg, var(--colore-sfondo-secondario) 0%, var(--colore-sfondo) 100%);
+        }
+
+        .hero-title {
+            font-family: var(--font-titoli);
+            font-size: 3rem;
+            color: var(--colore-primario);
+            margin-bottom: var(--spazio-sm);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--colore-testo-chiaro);
+            max-width: 600px;
+            margin: 0 auto var(--spazio-md);
+        }
+
+        .section {
+            padding: var(--spazio-xl) 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-family: var(--font-titoli);
+            font-size: 2.5rem;
+            color: var(--colore-primario);
+            text-align: center;
+            margin-bottom: var(--spazio-lg);
+        }
+
+        .storia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spazio-lg);
+            margin-bottom: var(--spazio-xl);
+        }
+
+        .storia-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spazio-lg);
+            box-shadow: var(--box-shadow);
+            transition: var(--transizione);
+        }
+
+        .storia-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--colore-accento), var(--colore-secondario));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spazio-md);
+            font-size: 2rem;
+            color: white;
+        }
+
+        .card-title {
+            font-family: var(--font-titoli);
+            font-size: 1.5rem;
+            color: var(--colore-primario);
+            margin-bottom: var(--spazio-sm);
+        }
+
+        .card-text {
+            color: var(--colore-testo-chiaro);
+            line-height: 1.7;
+        }
+
+        .famiglia-section {
+            background: var(--colore-sfondo-secondario);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spazio-xl);
+            text-align: center;
+        }
+
+        .famiglia-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote {
+            font-family: var(--font-titoli);
+            font-size: 1.5rem;
+            color: var(--colore-primario);
+            font-style: italic;
+            margin: var(--spazio-lg) 0;
+            position: relative;
+        }
+
+        .quote::before,
+        .quote::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--colore-accento);
+            position: absolute;
+            top: -10px;
+        }
+
+        .quote::before {
+            left: -30px;
+        }
+
+        .quote::after {
+            right: -30px;
+        }
+
+        .valori-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spazio-md);
+            margin-top: var(--spazio-lg);
+        }
+
+        .valore-item {
+            text-align: center;
+            padding: var(--spazio-md);
+        }
+
+        .valore-icon {
+            font-size: 3rem;
+            color: var(--colore-accento);
+            margin-bottom: var(--spazio-sm);
+        }
+
+        .valore-title {
+            font-family: var(--font-titoli);
+            font-size: 1.2rem;
+            color: var(--colore-primario);
+            margin-bottom: var(--spazio-xs);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--colore-primario);
+            color: white;
+            padding: var(--spazio-lg) 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spazio-lg);
+        }
+
+        .footer-section h3 {
+            font-family: var(--font-titoli);
+            margin-bottom: var(--spazio-sm);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: var(--colore-accento);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spazio-sm);
+            margin-top: var(--spazio-sm);
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: var(--spazio-xs);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transizione);
+        }
+
+        .social-links a:hover {
+            background: var(--colore-accento);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: var(--spazio-md);
+                box-shadow: var(--box-shadow);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transizione);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .storia-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spazio-md);
+            }
+
+            .quote::before,
+            .quote::after {
+                display: none;
+            }
+
+            .container {
+                padding: 0 var(--spazio-sm);
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .storia-grid {
+                gap: var(--spazio-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">La Vela Ristorante</a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="chi-siamo.html" class="active">Chi Siamo</a></li>
+                    <li><a href="prenota.html">Prenota</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+                <a href="prenota.html" class="cta-button">Prenota ora</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">La Nostra Storia</h1>
+                <p class="hero-subtitle">Dal 1960, dove la tradizione pugliese incontra il mare</p>
+            </div>
+        </section>
+
+        <section class="section" id="storia-famiglia">
+            <div class="container">
+                <h2 class="section-title">La Famiglia Ficarella</h2>
+                <div class="storia-grid">
+                    <div class="storia-card">
+                        <div class="card-icon">🌊</div>
+                        <h3 class="card-title">Le Origini</h3>
+                        <p class="card-text">Luigi Ficarella è stato il fondatore dello storico Ristorante Pizzeria "La Vela", un concreto esempio sin dagli anni sessanta di affidabilità e di qualità nella ristorazione barese.</p>
+                    </div>
+                    <div class="storia-card">
+                        <div class="card-icon">👨‍👩‍👦‍👦</div>
+                        <h3 class="card-title">La Tradizione Continua</h3>
+                        <p class="card-text">Attualmente lo storico ristorante è gestito dai figli Domenico e Giuseppe che, con passione e dedizione, seguono le orme del papà "Gino".</p>
+                    </div>
+                    <div class="storia-card">
+                        <div class="card-icon">⭐</div>
+                        <h3 class="card-title">Punto di Riferimento</h3>
+                        <p class="card-text">Possiamo considerare oggi la Famiglia Ficarella un vero punto di riferimento nel campo della ristorazione a Bari e provincia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="fondazione-1960">
+            <div class="container">
+                <div class="famiglia-section">
+                    <div class="famiglia-content">
+                        <h2 class="section-title">Dal 1960</h2>
+                        <p class="quote">La Vela è un fantastico ristorante sul mare a Bari gestito dalla Famiglia Ficarella: l'esperienza, la cordialità e la loro maestria rendono la sosta presso il ristorante pugliese... Indimenticabile!</p>
+                        <p>Il successo del famoso ristorante di pesce a Torre a Mare è ottenuto grazie agli insegnamenti tramandati dallo storico fondatore del locale e, diciamolo, anche grazie alla bravura dei suoi figli!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="valori-tradizione">
+            <div class="container">
+                <h2 class="section-title">I Nostri Valori</h2>
+                <div class="valori-grid">
+                    <div class="valore-item">
+                        <div class="valore-icon">🐟</div>
+                        <h3 class="valore-title">Qualità</h3>
+                        <p>Pesce fresco e ingredienti selezionati per garantire sempre il massimo della qualità.</p>
+                    </div>
+                    <div class="valore-item">
+                        <div class="valore-icon">👥</div>
+                        <h3 class="valore-title">Tradizione Familiare</h3>
+                        <p>60 anni di esperienza tramandati di generazione in generazione.</p>
+                    </div>
+                    <div class="valore-item">
+                        <div class="valore-icon">🏖️</div>
+                        <h3 class="valore-title">Location Unica</h3>
+                        <p>Una splendida posizione sul mare di Torre a Mare per un'esperienza indimenticabile.</p>
+                    </div>
+                    <div class="valore-item">
+                        <div class="valore-icon">🍽️</div>
+                        <h3 class="valore-title">Cucina Pugliese</h3>
+                        <p>Specialità autentiche della tradizione culinaria pugliese e del Mediterraneo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="generazioni">
+            <div class="container">
+                <h2 class="section-title">Tre Generazioni di Passione</h2>
+                <div class="famiglia-section">
+                    <div class="famiglia-content">
+                        <p>Il ristorante a Bari di pesce e altre prelibatezze della tradizione pugliese è aperto tutti i giorni sia a pranzo che a cena, tranne il martedì. La nostra famiglia continua a portare avanti con orgoglio la tradizione iniziata oltre 60 anni fa.</p>
+                        <p class="quote">Esperienza da ripetere. Un sabato pugliese, con amici storici in una location curatissima, con cibo eccellente. Abbiamo degustato crudo e primi piatti.</p>
+                        <p>La passione per la cucina e l'amore per la nostra terra si tramandano di padre in figlio, mantenendo viva quella tradizione che ci ha resi un punto di riferimento per chi cerca l'autentica cucina pugliese sul mare.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>La Vela Ristorante</h3>
+                    <p>Torre a Mare, Bari</p>
+                    <p>Puglia, Italia</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p>Tel: <a href="tel:+390805430873">+39 080 5430873</a></p>
+                    <p>Email: <a href="mailto:info@lavelabari.it">info@lavelabari.it</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Seguici</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/lavelabari/" target="_blank">📘</a>
+                        <a href="https://www.instagram.com/ristorantelavelabari/" target="_blank">📷</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu hamburger
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Chiudi menu quando si clicca su un link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Animazioni scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scrolling per i link interni
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background opacity on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
