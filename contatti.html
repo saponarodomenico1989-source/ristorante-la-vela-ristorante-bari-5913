@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - La Vela Ristorante | Ristorante di Pesce Torre a Mare Bari</title>
+    <meta name="description" content="Contatta La Vela Ristorante a Torre a Mare, Bari. Prenota il tuo tavolo sul mare e gusta le nostre specialità di pesce fresco. Dal 1960 tradizione pugliese autentica.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contatti - La Vela Ristorante | Torre a Mare Bari">
+    <meta property="og:description" content="Contatta La Vela Ristorante a Torre a Mare per prenotare il tuo tavolo sul mare. Specialità di pesce fresco e cucina pugliese dal 1960.">
+    <meta property="og:type" content="restaurant">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contatti - La Vela Ristorante | Torre a Mare Bari">
+    <meta name="twitter:description" content="Contatta La Vela Ristorante per prenotare il tuo tavolo sul mare a Torre a Mare, Bari.">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "La Vela Ristorante",
+        "description": "Ristorante pizzeria di pesce a Torre a Mare, Bari. Tradizione familiare dal 1960 con specialità di pesce fresco e cucina pugliese autentica.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Torre a Mare, Bari",
+            "addressRegion": "Puglia",
+            "addressCountry": "IT"
+        },
+        "telephone": "+39 080 5430873",
+        "email": "info@lavelabari.it",
+        "url": "https://www.ristorantelavelabari.com",
+        "foundingDate": "1960",
+        "servesCuisine": ["Italian", "Seafood", "Pizza", "Pugliese"],
+        "priceRange": "$$",
+        "sameAs": [
+            "https://www.facebook.com/lavelabari/",
+            "https://www.instagram.com/ristorantelavelabari/"
+        ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            /* Palette */
+            --colore-primario: #1e3a5f;
+            --colore-secondario: #2c5282;
+            --colore-accento: #38b2ac;
+            --colore-sfondo: #fafbfc;
+            --colore-sfondo-secondario: #f1f5f9;
+            --colore-testo: #2d3748;
+            --colore-testo-chiaro: #718096;
+            --colore-bordi: #e2e8f0;
+
+            /* Tipografia */
+            --font-titoli: 'Playfair Display', serif;
+            --font-testo: 'Inter', sans-serif;
+
+            /* Layout */
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+            --box-shadow: 0 4px 16px rgba(30, 58, 95, 0.08);
+            --box-shadow-hover: 0 12px 32px rgba(30, 58, 95, 0.15);
+            --transizione: all 0.3s ease;
+
+            /* Spaziatura */
+            --spazio-xs: 0.5rem;
+            --spazio-sm: 1rem;
+            --spazio-md: 2rem;
+            --spazio-lg: 4rem;
+            --spazio-xl: 8rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-testo);
+            line-height: 1.6;
+            color: var(--colore-testo);
+            background-color: var(--colore-sfondo);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            box-shadow: var(--box-shadow);
+            z-index: 1000;
+            transition: var(--transizione);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spazio-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-family: var(--font-titoli);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--colore-primario);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--spazio-md);
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--colore-testo);
+            font-weight: 600;
+            transition: var(--transizione);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--colore-accento);
+        }
+
+        .btn-prenota {
+            background: var(--colore-accento);
+            color: white;
+            padding: var(--spazio-xs) var(--spazio-sm);
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transizione);
+            margin-left: var(--spazio-sm);
+        }
+
+        .btn-prenota:hover {
+            background: var(--colore-secondario);
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: var(--spazio-xs);
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--colore-primario);
+            margin: 3px 0;
+            transition: var(--transizione);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 70px;
+            padding: var(--spazio-lg) 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spazio-md);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: var(--spazio-xl);
+        }
+
+        .page-title {
+            font-family: var(--font-titoli);
+            font-size: 3rem;
+            color: var(--colore-primario);
+            margin-bottom: var(--spazio-sm);
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--colore-testo-chiaro);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spazio-xl);
+            margin-bottom: var(--spazio-xl);
+        }
+
+        .contact-info {
+            background: white;
+            padding: var(--spazio-lg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-info h2 {
+            font-family: var(--font-titoli);
+            font-size: 2rem;
+            color: var(--colore-primario);
+            margin-bottom: var(--spazio-md);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--spazio-md);
+            padding: var(--spazio-sm);
+            border-radius: var(--border-radius);
+            transition: var(--transizione);
+        }
+
+        .contact-item:hover {
+            background: var(--colore-sfondo-secondario);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--colore-accento);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spazio-sm);
+            flex-shrink: 0;
+        }
+
+        .contact-icon::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 2px;
+        }
+
+        .contact-details h3 {
+            color: var(--colore-primario);
+            font-weight: 600;
+            margin-bottom: var(--spazio-xs);
+        }
+
+        .contact-details p {
+            color: var(--colore-testo-chiaro);
+        }
+
+        .contact-details a {
+            color: var(--colore-accento);
+            text-decoration: none;
+            transition: var(--transizione);
+        }
+
+        .contact-details a:hover {
+            color: var(--colore-primario);
+        }
+
+        .map-section {
+            background: white;
+            padding: var(--spazio-lg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--colore-accento), var(--colore-secondario));
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: var(--spazio-md);
+        }
+
+        .social-section {
+            background: var(--colore-sfondo-secondario);
+            padding: var(--spazio-xl) 0;
+            text-align: center;
+        }
+
+        .social-section h2 {
+            font-family: var(--font-titoli);
+            font-size: 2.5rem;
+            color: var(--colore-primario);
+            margin-bottom: var(--spazio-sm);
+        }
+
+        .social-subtitle {
+            color: var(--colore-testo-chiaro);
+            margin-bottom: var(--spazio-lg);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spazio-md);
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: var(--colore-primario);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            transition: var(--transizione);
+        }
+
+        .social-link:hover {
+            background: var(--colore-accento);
+            transform: translateY(-5px);
+        }
+
+        .social-link::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--colore-primario);
+            color: white;
+            padding: var(--spazio-lg) 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spazio-md);
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spazio-md);
+        }
+
+        .footer-contact p {
+            margin-bottom: var(--spazio-xs);
+        }
+
+        .footer-contact a {
+            color: var(--colore-accento);
+            text-decoration: none;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--spazio-sm);
+        }
+
+        .footer-social a {
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transizione);
+        }
+
+        .footer-social a:hover {
+            color: var(--colore-accento);
+        }
+
+        /* Animazioni */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .contacts-grid {
+                gap: var(--spazio-lg);
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: var(--spazio-lg);
+                transition: var(--transizione);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: var(--spazio-sm) 0;
+            }
+
+            .contacts-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spazio-md);
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .nav-container {
+                padding: 0 var(--spazio-sm);
+            }
+
+            .container {
+                padding: 0 var(--spazio-sm);
+            }
+
+            .contact-info,
+            .map-section {
+                padding: var(--spazio-md);
+            }
+
+            .footer-info {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+            }
+
+            .map-placeholder {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">La Vela Ristorante</a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="chi-siamo.html" class="nav-link">Chi Siamo</a></li>
+                <li><a href="prenota.html" class="nav-link">Prenota</a></li>
+                <li><a href="contatti.html" class="nav-link active">Contatti</a></li>
+                <li><a href="prenota.html" class="btn-prenota">Prenota ora</a></li>
+            </ul>
+            
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header fade-in">
+                <h1 class="page-title">Contatti</h1>
+                <p class="page-subtitle">Prenota il tuo tavolo sul mare e vieni a gustare le nostre specialità di pesce fresco. Ti aspettiamo a Torre a Mare!</p>
+            </section>
+
+            <!-- Contacts Grid -->
+            <div class="contacts-grid">
+                <!-- Contact Info -->
+                <section class="contact-info fade-in">
+                    <h2>Come Raggiungerci</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div class="contact-details">
+                            <h3>Indirizzo</h3>
+                            <p>Torre a Mare, Bari<br>Puglia, Italia</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div class="contact-details">
+                            <h3>Telefono</h3>
+                            <p><a href="tel:+390805430873">+39 080 5430873</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@lavelabari.it">info@lavelabari.it</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"></div>
+                        <div class="contact-details">
+                            <h3>Orari di Apertura</h3>
+                            <p>[INSERIRE ORARI]</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Map Section -->
+                <section class="map-section fade-in">
+                    <h2>La Nostra Location</h2>
+                    <div class="map-placeholder">
+                        <p>Mappa di Torre a Mare, Bari</p>
+                    </div>
+                    <p>Siamo situati nella splendida Torre a Mare, con vista sul mare Adriatico. Una location unica per gustare le nostre specialità di pesce fresco in un'atmosfera marinara e familiare.</p>
+                </section>
+            </div>
+        </div>
+
+        <!-- Social Section -->
+        <section class="social-section">
+            <div class="container">
+                <div class="fade-in">
+                    <h2>Seguici sui Social</h2>
+                    <p class="social-subtitle">Seguici sui nostri canali social per rimanere aggiornati su tutte le novità e sulle ultime specialità di pesce!</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/lavelabari/" target="_blank" class="social-link" aria-label="Facebook"></a>
+                        <a href="https://www.instagram.com/ristorantelavelabari/" target="_blank" class="social-link" aria-label="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-contact">
+                    <p><strong>La Vela Ristorante</strong></p>
+                    <p>Torre a Mare, Bari</p>
+                    <p>Tel: <a href="tel:+390805430873">+39 080 5430873</a></p>
+                    <p>Email: <a href="mailto:info@lavelabari.it">info@lavelabari.it</a></p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/lavelabari/" target="_blank">📘</a>
+                    <a href="https://www.instagram.com/ristorantelavelabari/" target="_blank">📷</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'white';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
